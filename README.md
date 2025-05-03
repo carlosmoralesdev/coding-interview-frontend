@@ -1,42 +1,36 @@
-# Bienvenido al coding-interview-frontend
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Descripción
-Acá tienes todos los assets que necesitas para llevar a cabo una pequeña prueba técnica. El objetivo es que puedas demostrar tus habilidades de programación y de UI. El proyecto consiste de una pequeña calculadora que te muestra cuanto vas a recibir si quieres cambiar una determinada cantidad de una moneda a otra.
+## Getting Started
 
-## Características
-1. Hay dos tipos de monedas: "FIAT" y "CRYPTO".
-2. La tasa de cambio la podrás obtener de nuestro API público.
-3. La moneda del input 
+First, run the development server:
 
-## API
-- URL: https://74j6q7lg6a.execute-api.eu-west-1.amazonaws.com/stage/orderbook/public/recommendations
-- Query Params:
-  - `type`: 0 -> Cambio de CRYPTO a FIAT, 1 -> Cambio de FIAT a CRYPTO
-  - `cryptoCurrencyId`: La moneda crypto (el ID está en el nombre del asset)
-  - `fiatCurrencyId`: La moneda fiat (el ID está en el nombre del asset)
-  - `amount`: Cantidad a cambiar
-  - `amountCurrencyId`: La moneda en la que está del input
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-Del response, simplemente obtener el `data.byPrice.fiatToCryptoExchangeRate` y multiplicarlo/dividirlo para mostrar toda la data necesaria.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-### Que puedes hacer: 
-- ✅ Preferiblemente, usa Flutter :)
-- ✅ Cuantas mejoras de UX como veas necesarias/quieras
-- ✅ No todo tiene que estar funcionando a la perfección, lo que más vamos a tomar en cuenta es el parecido con el diseño y la calidad del código.
-- ✅ Desarrolla la app con la arquitecura de una app que va a escalar, no hagas un código que no puedas mantener en el futuro.
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-### Que **no** puedes hacer:
-- ❌ Estresarte 🤗
+## Learn More
 
+To learn more about Next.js, take a look at the following resources:
 
-## Pasos para comenzar
-1. Haz un fork usando este repositorio como template
-2. Clona el repositorio en tu máquina
-3. Desarrolla la mini-app
-4. Sube tus cambios a tu repositorio
-5. Avísanos que has terminado
-6. ???
-7. PROFIT
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-### Cualquier duda contactarme a https://www.linkedin.com/in/carlosfontest/
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
