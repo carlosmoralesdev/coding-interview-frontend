@@ -1,42 +1,19 @@
-# Bienvenido al coding-interview-frontend
+Distribucion de carpetas:
 
-## Descripción
-Acá tienes todos los assets que necesitas para llevar a cabo una pequeña prueba técnica. El objetivo es que puedas demostrar tus habilidades de programación y de UI. El proyecto consiste de una pequeña calculadora que te muestra cuanto vas a recibir si quieres cambiar una determinada cantidad de una moneda a otra.
+-En la carpeta "app" se encuentra la parte principal del Proyecto construido en Next. Se divide en 2 carpetas:
+--(frontend): Contiene todos los componentes y pages del Proyecto, asi como hooks y estilos.
+--api: La carpeta api contiene todos los endpoints que necesitan ser consumidos por la aplicacion. Estos endpoints estan asociados a diferentes casos de uso y servicios. Se estan ejecutando del lado del servidor, por lo que en terminos de seguridad, las urls de api externas no son publicas. 
 
-## Características
-1. Hay dos tipos de monedas: "FIAT" y "CRYPTO".
-2. La tasa de cambio la podrás obtener de nuestro API público.
-3. La moneda del input 
+-Carpeta "application":
+La sub-carpeta services: Contiene las interfaces para servicios externos o apis de terceros.
+La sub-carpeta use-cases: Implementacion concreta de cada caso de uso (Por ejemplo, calcular tasa de conversion / rate).
 
-## API
-- URL: https://74j6q7lg6a.execute-api.eu-west-1.amazonaws.com/stage/orderbook/public/recommendations
-- Query Params:
-  - `type`: 0 -> Cambio de CRYPTO a FIAT, 1 -> Cambio de FIAT a CRYPTO
-  - `cryptoCurrencyId`: La moneda crypto (el ID está en el nombre del asset)
-  - `fiatCurrencyId`: La moneda fiat (el ID está en el nombre del asset)
-  - `amount`: Cantidad a cambiar
-  - `amountCurrencyId`: La moneda en la que está del input
+-Carpeta "entities": Contiene los modelos/tipos/dominio de la aplicacion, tanto para los codigos de errores como para el resto de tipos usados en la aplicacion.
 
-Del response, simplemente obtener el `data.byPrice.fiatToCryptoExchangeRate` y multiplicarlo/dividirlo para mostrar toda la data necesaria.
+-Carpeta "infrastructure": Se refiere a las implementaciones tecnicas para repositorios y servicios, tomando como base el molde/estructuras/tipos establecidos en la carpeta "application".
 
-### Que puedes hacer: 
-- ✅ Preferiblemente, usa Flutter :)
-- ✅ Cuantas mejoras de UX como veas necesarias/quieras
-- ✅ No todo tiene que estar funcionando a la perfección, lo que más vamos a tomar en cuenta es el parecido con el diseño y la calidad del código.
-- ✅ Desarrolla la app con la arquitecura de una app que va a escalar, no hagas un código que no puedas mantener en el futuro.
+-Carpeta "interface-adapters": Actúa como una capa intermedia entre la infraestructura y el frontend. Aqui van Dtos y transformacion de datos.
 
+-Test: Carpeta donde se almacenaran las pruebas unitarias.
 
-### Que **no** puedes hacer:
-- ❌ Estresarte 🤗
-
-
-## Pasos para comenzar
-1. Haz un fork usando este repositorio como template
-2. Clona el repositorio en tu máquina
-3. Desarrolla la mini-app
-4. Sube tus cambios a tu repositorio
-5. Avísanos que has terminado
-6. ???
-7. PROFIT
-
-### Cualquier duda contactarme a https://www.linkedin.com/in/carlosfontest/
+-Utils: Funciones de utilidad y que pueden ser compartidas entre otras carpetas.
