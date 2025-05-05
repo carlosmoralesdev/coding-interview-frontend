@@ -75,7 +75,6 @@ export function useExchangeHandler() {
 
         if(amount === ''){
             setLoadingRate(false)
-            toast.error('Ingrese un monto.')
             return
         }
         if (Number(amount) <= 0) {
