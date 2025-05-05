@@ -1,4 +1,4 @@
-// Common interface with comun props
+// Common interface with common props
 interface BaseCurrency {
     label: string;
     flagImg: string;

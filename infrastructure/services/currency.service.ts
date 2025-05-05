@@ -15,7 +15,7 @@ export class CurrencyService implements CurrencyServiceInterface {
             ]
         } else if (type === 'crypto') {
             currencyList = [
-                { type: 'crypto', id: 'TATUM-TRON-USDT', label: 'USDT', flagImg: '/assets/crypto_currencies/TATUM-TRON-USDT.png', description: 'Tether (USDT)' },
+                { type: 'crypto', id: 'TATUM-TRON-USDT', label: 'USDT', flagImg: '/assets/cripto_currencies/TATUM-TRON-USDT.png', description: 'Tether (USDT)' },
             ]
         }
         return currencyList

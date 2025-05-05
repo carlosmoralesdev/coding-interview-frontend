@@ -1,5 +1,6 @@
 import { NextRequest } from "next/server";
 import { ApiJsonResponse } from "../entities/response/response";
+import { toast } from "react-toastify";
 
 export const customFetch = async<T> (
     url: string,
@@ -31,7 +32,7 @@ export const customFetch = async<T> (
     const json: ApiJsonResponse = await res.json();
     const { data, error } = json;
     if (error) {
-      alert(error.message);
+      toast.error(error.message);
       return null;
     }
     return data;
