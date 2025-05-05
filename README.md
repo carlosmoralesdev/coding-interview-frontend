@@ -1,36 +1,19 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Distribucion de carpetas:
 
-## Getting Started
+-En la carpeta "app" se encuentra la parte principal del Proyecto construido en Next. Se divide en 2 carpetas:
+--(frontend): Contiene todos los componentes y pages del Proyecto, asi como hooks y estilos.
+--api: La carpeta api contiene todos los endpoints que necesitan ser consumidos por la aplicacion. Estos endpoints estan asociados a diferentes casos de uso y servicios. Se estan ejecutando del lado del servidor, por lo que en terminos de seguridad, las urls de api externas no son publicas. 
 
-First, run the development server:
+-Carpeta "application":
+La sub-carpeta services: Contiene las interfaces para servicios externos o apis de terceros.
+La sub-carpeta use-cases: Implementacion concreta de cada caso de uso (Por ejemplo, calcular tasa de conversion / rate).
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+-Carpeta "entities": Contiene los modelos/tipos/dominio de la aplicacion, tanto para los codigos de errores como para el resto de tipos usados en la aplicacion.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+-Carpeta "infrastructure": Se refiere a las implementaciones tecnicas para repositorios y servicios, tomando como base el molde/estructuras/tipos establecidos en la carpeta "application".
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+-Carpeta "interface-adapters": Actúa como una capa intermedia entre la infraestructura y el frontend. Aqui van Dtos y transformacion de datos.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+-Test: Carpeta donde se almacenaran las pruebas unitarias.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+-Utils: Funciones de utilidad y que pueden ser compartidas entre otras carpetas.
